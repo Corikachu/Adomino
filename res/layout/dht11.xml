@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <Button
+        android:id="@+id/btOpen1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="OnClickOpen1"
+        android:text="Device Start" />
+
+    <Button
+        android:id="@+id/btClose1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="OnClickClose1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="Device Close" />
+    
+    <ImageView 
+        android:id="@+id/face1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btOpen1"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/face1"
+        android:visibility="invisible"/>
+    
+    <ImageView 
+        android:id="@+id/face2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btOpen1"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/face2"
+        android:visibility="invisible"/>
+   
+    <ImageView 
+        android:id="@+id/face3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btOpen1"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/face3"
+        android:visibility="invisible"/>
+   
+    <ImageView 
+        android:id="@+id/face4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btOpen1"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/face4"
+        android:visibility="invisible"/>
+   
+    <ImageView 
+        android:id="@+id/face5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btOpen1"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/face5"
+        android:visibility="invisible"/>
+    
+    <TextView 
+        android:id="@+id/tvTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/face1"
+        android:text="test"/>
+    
+    <TextView 
+        android:id="@+id/tvHumid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTemp"
+        android:text="test"/>
+
+</RelativeLayout>

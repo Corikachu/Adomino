@@ -1,0 +1,75 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <TextView 
+        android:id="@+id/topText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="A-domino"
+        android:textSize="20sp"/>
+    
+    <Button 
+        android:id="@+id/btOpen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/topText"
+        android:onClick="onClickOpen"
+        android:text="Open"/>
+    
+    <Button
+        android:id="@+id/btClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/btOpen"
+        android:layout_alignBottom="@id/btOpen"
+        android:layout_toRightOf="@id/btOpen"
+        android:onClick="onClickClose"
+        android:text="Close" />
+    
+    <Button
+        android:id="@+id/btRead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/btClose"
+        android:layout_toRightOf="@id/btClose"
+        android:onClick="onClickRead"
+        android:text="Read" />
+
+
+    <ScrollView 
+        android:id="@+id/svText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btRead"
+        android:textSize="12sp"
+        android:layout_marginTop="25dip"
+        >
+        
+        
+        <LinearLayout 
+            android:id="@+id/LinearLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            
+            <TextView
+		        android:id="@+id/tvRead"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentBottom="true"
+                android:typeface="monospace"
+		        android:text="" />
+            
+        </LinearLayout>
+    </ScrollView>
+    
+</RelativeLayout>

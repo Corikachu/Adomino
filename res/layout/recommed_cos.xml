@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <ImageView 
+        android:id="@+id/cos1"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        android:src="@drawable/cos1" />
+    
+    <ImageView 
+        android:id="@+id/cos2"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        android:src="@drawable/cos2" />
+     
+    <ImageView 
+        android:id="@+id/cos3"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        android:src="@drawable/cos3" />
+         
+    <ImageView 
+        android:id="@+id/cos4"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        android:src="@drawable/cos4" />
+             
+     <ImageView
+         android:id="@+id/cos5"
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
+         android:layout_alignParentBottom="true"
+         android:layout_centerHorizontal="true"
+         android:src="@drawable/cos5"
+         android:visibility="invisible" />
+    
+</RelativeLayout>
