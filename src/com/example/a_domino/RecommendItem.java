@@ -13,7 +13,6 @@ public class RecommendItem extends Activity {
 
 	ImageView cos1, cos2, cos3, cos4, cos5;
 	
-	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
@@ -31,12 +30,12 @@ public class RecommendItem extends Activity {
 	    
 	    if(intentActivity == 1){
 	    	cos1.setVisibility(View.VISIBLE);
-	    	ImageClickLisnter(cos1, "http://www.naver.com");
+	    	ImageClickLisnter(cos1, "http://www.nots.co.kr/product.nots?productId=40");
 	    	
 	    }
 	    else if(intentActivity == 2){
 	    	cos2.setVisibility(View.VISIBLE);
-	    	ImageClickLisnter(cos2, "");
+	    	ImageClickLisnter(cos2, "http://www.ellotte.com/selectitem/goodsDetail.ldpm?goodsNo=10017339&dispNo=X01A01A02&isdPathCd=02&isdPathDtlNo=X01A01A02#");
 	    	
 	    }
 	    else if(intentActivity == 3){

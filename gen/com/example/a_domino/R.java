@@ -17,65 +17,65 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static int activity_horizontal_margin=0x7f050000;
-        public static int activity_vertical_margin=0x7f050001;
+        public static final int activity_horizontal_margin=0x7f050000;
+        public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static int cos1=0x7f020000;
-        public static int cos2=0x7f020001;
-        public static int cos3=0x7f020002;
-        public static int cos4=0x7f020003;
-        public static int cos5=0x7f020004;
-        public static int face1=0x7f020005;
-        public static int face2=0x7f020006;
-        public static int face3=0x7f020007;
-        public static int face4=0x7f020008;
-        public static int face5=0x7f020009;
-        public static int ic_launcher=0x7f02000a;
+        public static final int cos1=0x7f020000;
+        public static final int cos2=0x7f020001;
+        public static final int cos3=0x7f020002;
+        public static final int cos4=0x7f020003;
+        public static final int cos5=0x7f020004;
+        public static final int face1=0x7f020005;
+        public static final int face2=0x7f020006;
+        public static final int face3=0x7f020007;
+        public static final int face4=0x7f020008;
+        public static final int face5=0x7f020009;
+        public static final int ic_launcher=0x7f02000a;
     }
     public static final class id {
-        public static int LinearLayout=0x7f090008;
-        public static int action_settings=0x7f090018;
-        public static int btClose=0x7f090005;
-        public static int btClose1=0x7f09000b;
-        public static int btOpen=0x7f090004;
-        public static int btOpen1=0x7f09000a;
-        public static int btRead=0x7f090006;
-        public static int btn_heart_start=0x7f090002;
-        public static int cos1=0x7f090013;
-        public static int cos2=0x7f090014;
-        public static int cos3=0x7f090015;
-        public static int cos4=0x7f090016;
-        public static int cos5=0x7f090017;
-        public static int face1=0x7f09000c;
-        public static int face2=0x7f09000d;
-        public static int face3=0x7f09000e;
-        public static int face4=0x7f09000f;
-        public static int face5=0x7f090010;
-        public static int l_bottom_heart=0x7f090001;
-        public static int scan_video_view_heart=0x7f090000;
-        public static int svText=0x7f090007;
-        public static int topText=0x7f090003;
-        public static int tvHumid=0x7f090012;
-        public static int tvRead=0x7f090009;
-        public static int tvTemp=0x7f090011;
+        public static final int LinearLayout=0x7f090008;
+        public static final int action_settings=0x7f090018;
+        public static final int btClose=0x7f090005;
+        public static final int btClose1=0x7f09000b;
+        public static final int btOpen=0x7f090004;
+        public static final int btOpen1=0x7f09000a;
+        public static final int btRead=0x7f090006;
+        public static final int btn_heart_start=0x7f090002;
+        public static final int cos1=0x7f090013;
+        public static final int cos2=0x7f090014;
+        public static final int cos3=0x7f090015;
+        public static final int cos4=0x7f090016;
+        public static final int cos5=0x7f090017;
+        public static final int face1=0x7f09000c;
+        public static final int face2=0x7f09000d;
+        public static final int face3=0x7f09000e;
+        public static final int face4=0x7f09000f;
+        public static final int face5=0x7f090010;
+        public static final int l_bottom_heart=0x7f090001;
+        public static final int scan_video_view_heart=0x7f090000;
+        public static final int svText=0x7f090007;
+        public static final int topText=0x7f090003;
+        public static final int tvHumid=0x7f090012;
+        public static final int tvRead=0x7f090009;
+        public static final int tvTemp=0x7f090011;
     }
     public static final class layout {
-        public static int activity_heart=0x7f030000;
-        public static int activity_main=0x7f030001;
-        public static int dht11=0x7f030002;
-        public static int recommed_cos=0x7f030003;
+        public static final int activity_heart=0x7f030000;
+        public static final int activity_main=0x7f030001;
+        public static final int dht11=0x7f030002;
+        public static final int recommed_cos=0x7f030003;
     }
     public static final class menu {
-        public static int main=0x7f080000;
+        public static final int main=0x7f080000;
     }
     public static final class raw {
-        public static int heart_portrait=0x7f040000;
+        public static final int heart_portrait=0x7f040000;
     }
     public static final class string {
-        public static int action_settings=0x7f060001;
-        public static int app_name=0x7f060000;
-        public static int hello_world=0x7f060002;
+        public static final int action_settings=0x7f060001;
+        public static final int app_name=0x7f060000;
+        public static final int hello_world=0x7f060002;
     }
     public static final class style {
         /** 
@@ -99,10 +99,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f070000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static int AppTheme=0x7f070001;
+        public static final int AppTheme=0x7f070001;
     }
 }

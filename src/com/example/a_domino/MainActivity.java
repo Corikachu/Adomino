@@ -20,12 +20,8 @@ import com.physicaloid.lib.usb.driver.uart.ReadLisener;
 
 public class MainActivity extends Activity {
 
-	private static final int MENU_ID_SETTING        = 0;
-    private static final int MENU_ID_CLEARTEXT      = 1;
-    private static final int MENU_ID_HEART_MEASURE  = 2;
-    private static final int MENU_ID_OPENDEVICE     = 3;
-    private static final int MENU_ID_CLOSEDEVICE    = 4;
-    private static final int MENU_ID_DHT11   	    = 5;
+    private static final int MENU_ID_HEART_MEASURE  = 0;
+    private static final int MENU_ID_DHT11   	    = 1;
 	
 	Button btOpen, btClose, btRead;
 	TextView tvRead;
@@ -88,38 +84,22 @@ public class MainActivity extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		 menu.add(Menu.NONE, MENU_ID_OPENDEVICE, Menu.NONE, "Open Device");
 	     menu.add(Menu.NONE, MENU_ID_DHT11, Menu.NONE, "온습도 센서");
-//	     menu.add(Menu.NONE, MENU_ID_SETTING, Menu.NONE, "Setting ...");
-	     menu.add(Menu.NONE, MENU_ID_CLEARTEXT, Menu.NONE, "Clear Text");
 	     menu.add(Menu.NONE, MENU_ID_HEART_MEASURE, Menu.NONE, "Heart rate graph");
-	     menu.add(Menu.NONE, MENU_ID_CLOSEDEVICE, Menu.NONE, "Close Device");
-	     
+
 	     return super.onCreateOptionsMenu(menu);
 	}
 	
 	@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case MENU_ID_OPENDEVICE:
-                openUsbSerial();
-                return true;
             case MENU_ID_DHT11:
             	Intent intent = new Intent(this, Dht11.class);
             	startActivityForResult(intent, 1);
                 return true;
-            case MENU_ID_SETTING:
-                return true;
-            case MENU_ID_CLEARTEXT:
-//                mTvSerial.setText("");
-//                mText.setLength(0);
-                return true;
             case MENU_ID_HEART_MEASURE:
             	Intent mintent = new Intent(this, HeartMeasureActivity.class);
             	startActivityForResult(mintent, 1);
-                return true;
-            case MENU_ID_CLOSEDEVICE:
-                closeUsbSerial();
                 return true;
             default:
                 return false;

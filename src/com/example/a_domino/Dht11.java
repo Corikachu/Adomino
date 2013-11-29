@@ -75,7 +75,7 @@ public class Dht11 extends Activity {
 					int integ = Integer.parseInt(readStr);
 					
 					if(integ/1000 >= 1){
-						sText(tvTemp, ""+ integ%100 + "do");
+						sText(tvTemp, ""+ integ%100 + "กษ");
 						sText(tvHumid, ""+ ((integ-integ%100)/100) + "%");
 						sDiscomfortable(integ);
 					}
@@ -182,7 +182,7 @@ public class Dht11 extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case MENU_ID_RECOMMEND:
-//            	intentActvity = 1;
+            	intentActvity = 2;
             	Intent intent = new Intent(this, RecommendItem.class);
             	intent.putExtra("intentActivity", intentActvity);
             	startActivityForResult(intent, 1);
