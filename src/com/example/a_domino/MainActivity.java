@@ -11,6 +11,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,10 +25,8 @@ public class MainActivity extends Activity {
     private static final int MENU_ID_HEART_MEASURE  = 0;
     private static final int MENU_ID_DHT11   	    = 1;
 	
-	Button btOpen, btClose, btRead;
-	TextView tvRead;
-	ScrollView mSvText;
-
+	ImageButton btSkin, btHeart;
+	ImageView mainView;
 	Physicaloid mPhysicaloid;
 	
 	@Override
@@ -34,52 +34,24 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		btOpen = (Button)findViewById(R.id.btOpen);
-		btClose = (Button)findViewById(R.id.btClose);
-		btRead = (Button)findViewById(R.id.btRead);
-		tvRead = (TextView)findViewById(R.id.tvRead);
-		mSvText = (ScrollView)findViewById(R.id.svText);
-		
-		
-		setEnabledUi(false);
+		mainView = (ImageView)findViewById(R.id.main);
+		btSkin = (ImageButton)findViewById(R.id.skin);
+		btHeart = (ImageButton)findViewById(R.id.heart);
 		
 		mPhysicaloid = new Physicaloid(this);
 	}
     
 
+	public void skinButton(View v){
+		Intent intent = new Intent(this, Dht11.class);
+    	startActivityForResult(intent, 1);
+	}
 	
-	public void onClickOpen(View v){
-		if(mPhysicaloid.open()){
-			setEnabledUi(true);
-			
-			mPhysicaloid.addReadListener(new ReadLisener() {
-				String readStr;
-				
-				@Override
-				public void onRead(int size) {
-					byte[] buf = new byte[size];
-					
-					mPhysicaloid.read(buf, size);
-					try{
-						readStr = new String(buf, "UTF-8");
-					} catch(UnsupportedEncodingException e){
-						Log.e("TAG", e.toString());
-						return;
-					}
-					tvAppend(tvRead, readStr);
-					mSvText.fullScroll(ScrollView.FOCUS_DOWN);
-				}
-			});
-		}
+	public void heartButton(View v){
+		Intent mintent = new Intent(this, HeartMeasureActivity.class);
+    	startActivityForResult(mintent, 1);
 	}
 
-	public void onClickClose(View v){
-		if(mPhysicaloid.close()){
-			setEnabledUi(false);
-		}
-	}
-	
-	
 	
 
 	@Override
@@ -106,49 +78,7 @@ public class MainActivity extends Activity {
         }
     }
 	
-    private void openUsbSerial() {
-        if(mPhysicaloid == null) {
-            Toast.makeText(this, "cannot open", Toast.LENGTH_SHORT).show();
-            return;
-        }
 
-        if (!mPhysicaloid.isOpened()) {
-            }
-            if (!mPhysicaloid.open()) {
-                Toast.makeText(this, "cannot open", Toast.LENGTH_SHORT).show();
-                return;
-            } else {
-                Toast.makeText(this, "connected", Toast.LENGTH_SHORT).show();
-                setEnabledUi(true);
-        			
-        		mPhysicaloid.addReadListener(new ReadLisener() {
-        			String readStr;
-        				
-	        		@Override
-	        		public void onRead(int size) {
-	        			byte[] buf = new byte[size];
-	        					
-	        			mPhysicaloid.read(buf, size);
-	        			try{
-	        				readStr = new String(buf, "UTF-8");
-	        			} catch(UnsupportedEncodingException e){
-	        				Log.e("TAG", e.toString());
-	        				return;
-	        			}
-	       				tvAppend(tvRead, readStr);
-	       				mSvText.fullScroll(ScrollView.FOCUS_DOWN);
-	        		}	
-        		});
-        		
-            }
-    }
-    
-    private void closeUsbSerial() {
-        setEnabledUi(false);
-       
-        mPhysicaloid.close();
-    }
-    
 	
 	Handler mHandler = new Handler();
 	private void tvAppend(TextView tv, CharSequence text){
@@ -164,18 +94,23 @@ public class MainActivity extends Activity {
 		
 	}
 	
-	private void setEnabledUi(boolean on){
-		if(on){
-			btOpen.setEnabled(false);
-			btClose.setEnabled(true);
-			btRead.setEnabled(true);
-			tvRead.setEnabled(true);
-		} else{
-			btOpen.setEnabled(true);
-			btClose.setEnabled(false);
-			btRead.setEnabled(false);
-			tvRead.setEnabled(false);
-		}
+
+	
+	@Override
+	public void onPause(){
+		mPhysicaloid.close();
+		super.onPause();
 	}
 	
+	@Override
+	public void onDestroy(){
+		mPhysicaloid.close();
+		super.onDestroy();
+	}
+	
+	@Override
+	public void onStop(){
+		mPhysicaloid.close();
+		super.onStop();
+	}
 }

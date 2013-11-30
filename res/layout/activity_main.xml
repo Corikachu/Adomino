@@ -8,68 +8,36 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <TextView 
-        android:id="@+id/topText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="A-domino"
-        android:textSize="20sp"/>
-    
-    <Button 
-        android:id="@+id/btOpen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@id/topText"
-        android:onClick="onClickOpen"
-        android:text="Open"/>
-    
-    <Button
-        android:id="@+id/btClose"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@id/btOpen"
-        android:layout_alignBottom="@id/btOpen"
-        android:layout_toRightOf="@id/btOpen"
-        android:onClick="onClickClose"
-        android:text="Close" />
-    
-    <Button
-        android:id="@+id/btRead"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@id/btClose"
-        android:layout_toRightOf="@id/btClose"
-        android:onClick="onClickRead"
-        android:text="Read" />
-
-
-    <ScrollView 
-        android:id="@+id/svText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btRead"
-        android:textSize="12sp"
-        android:layout_marginTop="25dip"
-        >
-        
-        
-        <LinearLayout 
-            android:id="@+id/LinearLayout"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            
-            <TextView
-		        android:id="@+id/tvRead"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:layout_alignParentBottom="true"
-                android:typeface="monospace"
-		        android:text="" />
-            
-        </LinearLayout>
-    </ScrollView>
-    
+	<ImageView 
+	    android:id="@+id/main"
+	    android:layout_height="wrap_content"
+	    android:layout_width="wrap_content"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginTop="50dip"
+	    android:src="@drawable/main"
+	    />
+	
+	<ImageButton 
+	    android:id="@+id/skin"
+	    android:layout_height="wrap_content"
+	    android:layout_width="wrap_content"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginTop="200dip"
+	    android:layout_below="@id/main"
+	    android:src="@drawable/skin"
+	    android:onClick="skinButton"
+	    android:background="#00000000"
+	    />
+	
+	<ImageButton
+	    android:id="@+id/heart"
+	    android:layout_height="wrap_content"
+	    android:layout_width="wrap_content"
+	    android:layout_centerHorizontal="true"
+	    android:layout_below="@id/skin"
+	    android:src="@drawable/heart"
+	    android:onClick="heartButton" 
+	    android:background="#00000000"
+    	/>
+	
 </RelativeLayout>

@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
     
+<!-- Button -->   
     <Button
         android:id="@+id/btOpen1"
         android:layout_width="wrap_content"
@@ -18,7 +19,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:text="Device Close" />
-    
+
+<!-- Image View -->    
     <ImageView 
         android:id="@+id/face1"
         android:layout_width="wrap_content"
@@ -68,15 +70,18 @@
         android:layout_centerHorizontal="true"
         android:src="@drawable/face5"
         android:visibility="invisible"/>
+
     
+<!-- Text View -->    
     <TextView 
         android:id="@+id/tvTemp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/face1"
-        android:textSize="20sp"
-        android:text="온도"/>
+        android:layout_marginTop="50dip"
+        android:textSize="25sp"
+        android:text="아두이노를 연결하고 "/>
     
     <TextView 
         android:id="@+id/tvHumid"
@@ -84,7 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/tvTemp"
-        android:textSize="20sp"
-        android:text="습도"/>
+        android:textSize="25sp"
+        android:text="Device start를 눌러주세요"/>
 
 </RelativeLayout>

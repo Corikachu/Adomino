@@ -182,7 +182,7 @@ public class Dht11 extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case MENU_ID_RECOMMEND:
-            	intentActvity = 2;
+            	intentActvity = 3;
             	Intent intent = new Intent(this, RecommendItem.class);
             	intent.putExtra("intentActivity", intentActvity);
             	startActivityForResult(intent, 1);
@@ -192,4 +192,37 @@ public class Dht11 extends Activity {
                 return false;
         }
     }
+	
+	@Override
+	public void onPause(){
+		mSerial.close();
+		setEnabledUi(false);
+		super.onPause();
+	}
+	
+	@Override
+	public void onDestroy(){
+		mSerial.close();
+		super.onDestroy();
+	}
+	
+	@Override
+	public void onStop(){
+		mSerial.close();
+		setEnabledUi(false);
+		super.onStop();
+	}
+	
+	@Override
+	public void onResume(){
+		btOpen = (Button)findViewById(R.id.btOpen1);
+	    btClose = (Button)findViewById(R.id.btClose1);
+		super.onResume();
+	}
+	
+	public void onStart(){
+		btOpen = (Button)findViewById(R.id.btOpen1);
+	    btClose = (Button)findViewById(R.id.btClose1);
+		super.onStart();
+	}
 }

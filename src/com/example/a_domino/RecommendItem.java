@@ -40,7 +40,7 @@ public class RecommendItem extends Activity {
 	    }
 	    else if(intentActivity == 3){
 	    	cos3.setVisibility(View.VISIBLE);
-	    	ImageClickLisnter(cos3, "");
+	    	ImageClickLisnter(cos3, "http://www.lotte.com/goods/viewGoodsDetail.lotte?goods_no=22688208");
 	    	
 	    }
 	    else if(intentActivity == 4){
