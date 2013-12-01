@@ -22,6 +22,7 @@ public class CalorieActivity extends Activity {
 	
 	long endTime = 0;
 	long startTime = 0;
+	int calorieNum = 0;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -77,6 +78,7 @@ public class CalorieActivity extends Activity {
 	}
 	
 	public void buttonResetCal(View v){
+		mSerial.close();
 		resetText(goalCalroie, curCalroie, achivCalroie);
 	}
 	
@@ -93,7 +95,7 @@ public class CalorieActivity extends Activity {
 		mhandler.post(new Runnable() {
 			@Override
 			public void run() {
-				fv.setText("현재 칼로리 : "+ (int)((40+(fi - 23)*18)*((endTime-startTime)/1000))+"cal");
+				fv.setText("현재 칼로리 : "+ (float)((40+(fi - 23)*18)*((endTime-startTime)/1000))+"cal");
 			}
 		});
 	}
@@ -108,7 +110,7 @@ public class CalorieActivity extends Activity {
 		mhandler.post(new Runnable() {
 			@Override
 			public void run() {
-				fv.setText("달성량  : " + (int)(((40+(fi - 23)*18)*((endTime-startTime)/1000)/200000)*100) +"%");
+				fv.setText("달성량  : " + (float)(((40+(fi - 23)*18)*((endTime-startTime)/1000.0)/20000.0)) +"%");
 			}
 		});
 	}
@@ -132,9 +134,10 @@ public class CalorieActivity extends Activity {
 			
 			@Override
 			public void run() {
+				
 				fv1.setText("헬스기어를 연결하고");
 				fv2.setText("START 버튼을 눌러주세요");
-				fv3.setText("흐극흐극");
+				fv3.setText(" ");
 			}
 		});
 	}

@@ -3,11 +3,14 @@ package com.example.a_domino;
 import java.io.UnsupportedEncodingException;
 
 import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Vibrator;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,6 +30,8 @@ public class Dht11 extends Activity {
 	TextView tvTemp, tvHumid;
 	ImageView face1, face2, face3, face4, face5;
 	Vibrator vibrator;
+	NotificationManager nm;
+	Notification notif;
 	
 	Physicaloid mSerial;
 	
@@ -81,6 +86,16 @@ public class Dht11 extends Activity {
 						sText(tvTemp, ""+ integ%100 + "¡É");
 						sText(tvHumid, ""+ ((integ-integ%100)/100) + "%");
 						sDiscomfortable(integ);
+						
+						if(integ%100 >= 32){
+							nm = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+							notif = new NotificationCompat.Builder(getApplicationContext())
+									.setContentTitle("asdf")
+									.setContentText("ffff")
+									.setTicker("¾Ë¸²")
+									.setAutoCancel(true)
+									.build();
+						}
 					}
 				}
 			});
@@ -187,7 +202,6 @@ public class Dht11 extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case MENU_ID_RECOMMEND:
-            	intentActvity = 3;
             	Intent intent = new Intent(this, RecommendItem.class);
             	intent.putExtra("intentActivity", intentActvity);
             	startActivityForResult(intent, 1);

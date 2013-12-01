@@ -27,7 +27,7 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/currentCalorie"
         android:textSize="25sp"
-        android:text="흐극흐극" />
+        android:text=" " />
  
     <Button 
         android:id="@+id/stopButton"
