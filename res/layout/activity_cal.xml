@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView 
+        android:id="@+id/goalCalorie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="25sp"
+        android:text="아두이노를 연결하고" />
+
+    <TextView 
+        android:id="@+id/currentCalorie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/goalCalorie"
+        android:textSize="25sp"
+        android:text="START 버튼을 눌러주세요"/>
+    
+    <TextView 
+        android:id="@+id/achievementRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/currentCalorie"
+        android:textSize="25sp"
+        android:text="흐극흐극" />
+ 
+    <Button 
+        android:id="@+id/stopButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/achievementRate"
+        android:layout_marginTop="10dip"
+        android:onClick="buttonStopCal"
+        android:text="STOP"/> 
+    
+    <Button 
+        android:id="@+id/startButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/achievementRate"
+        android:layout_toLeftOf="@id/stopButton"
+        android:layout_marginTop="10dip"
+        android:onClick="buttonStartCal"
+        android:text="START"/>
+    
+    <Button 
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/achievementRate"
+        android:layout_toRightOf="@id/stopButton"
+        android:layout_marginTop="10dip"
+        android:onClick="buttonResetCal"
+        android:text="RESET"/>
+    
+</RelativeLayout>

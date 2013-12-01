@@ -22,7 +22,7 @@
 	    android:layout_height="wrap_content"
 	    android:layout_width="wrap_content"
 	    android:layout_centerHorizontal="true"
-	    android:layout_marginTop="200dip"
+	    android:layout_marginTop="120dip"
 	    android:layout_below="@id/main"
 	    android:src="@drawable/skin"
 	    android:onClick="skinButton"
@@ -39,5 +39,15 @@
 	    android:onClick="heartButton" 
 	    android:background="#00000000"
     	/>
+	
+	<ImageButton 
+	    android:id="@+id/calorie"
+	    android:layout_height="wrap_content"
+	    android:layout_width="wrap_content"
+	    android:layout_centerHorizontal="true"
+	    android:layout_below="@id/heart"
+	    android:src="@drawable/calorie"
+	    android:onClick="calorieButton"
+	    android:background="#00000000" />
 	
 </RelativeLayout>

@@ -5,16 +5,11 @@ import java.io.UnsupportedEncodingException;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.ScrollView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.physicaloid.lib.Physicaloid;
@@ -24,8 +19,9 @@ public class MainActivity extends Activity {
 
     private static final int MENU_ID_HEART_MEASURE  = 0;
     private static final int MENU_ID_DHT11   	    = 1;
+    private static final int MENU_ID_CALORIE		= 2;
 	
-	ImageButton btSkin, btHeart;
+	ImageButton btSkin, btHeart, btCalorie;
 	ImageView mainView;
 	Physicaloid mPhysicaloid;
 	
@@ -37,6 +33,7 @@ public class MainActivity extends Activity {
 		mainView = (ImageView)findViewById(R.id.main);
 		btSkin = (ImageButton)findViewById(R.id.skin);
 		btHeart = (ImageButton)findViewById(R.id.heart);
+		btCalorie = (ImageButton)findViewById(R.id.calorie);
 		
 		mPhysicaloid = new Physicaloid(this);
 	}
@@ -50,6 +47,11 @@ public class MainActivity extends Activity {
 	public void heartButton(View v){
 		Intent mintent = new Intent(this, HeartMeasureActivity.class);
     	startActivityForResult(mintent, 1);
+	}
+	
+	public void calorieButton(View v){
+		Intent cintent = new Intent(this, CalorieActivity.class);
+		startActivityForResult(cintent, 1);
 	}
 
 	
@@ -66,33 +68,21 @@ public class MainActivity extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case MENU_ID_DHT11:
-            	Intent intent = new Intent(this, Dht11.class);
-            	startActivityForResult(intent, 1);
+            	Intent dintent = new Intent(this, Dht11.class);
+            	startActivityForResult(dintent, 1);
                 return true;
             case MENU_ID_HEART_MEASURE:
-            	Intent mintent = new Intent(this, HeartMeasureActivity.class);
-            	startActivityForResult(mintent, 1);
+            	Intent hintent = new Intent(this, HeartMeasureActivity.class);
+            	startActivityForResult(hintent, 1);
                 return true;
+            case MENU_ID_CALORIE:
+            	Intent cintetn = new Intent(this, CalorieActivity.class);
+            	startActivityForResult(cintetn, 1);
             default:
                 return false;
         }
     }
 	
-
-	
-	Handler mHandler = new Handler();
-	private void tvAppend(TextView tv, CharSequence text){
-		final TextView ftv = tv;
-		final CharSequence ftext = text;
-		mHandler.post(new Runnable() {
-			
-			@Override
-			public void run() {
-				ftv.append(ftext);
-			}
-		});
-		
-	}
 	
 
 	

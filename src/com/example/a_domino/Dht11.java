@@ -3,9 +3,11 @@ package com.example.a_domino;
 import java.io.UnsupportedEncodingException;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Vibrator;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,10 +26,12 @@ public class Dht11 extends Activity {
 	Button btOpen, btClose;
 	TextView tvTemp, tvHumid;
 	ImageView face1, face2, face3, face4, face5;
+	Vibrator vibrator;
 	
 	Physicaloid mSerial;
 	
 	static int intentActvity;
+	long vibratorTime=500;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -70,7 +74,6 @@ public class Dht11 extends Activity {
 						Log.e("TAG", e.toString());
 						return;
 					}
-					
 					
 					int integ = Integer.parseInt(readStr);
 					
@@ -145,6 +148,8 @@ public class Dht11 extends Activity {
 				} else if(fi<=55 || fi>=85 ){
 					//5
 					intentActvity = 5;
+					vibrator = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
+					vibrator.vibrate(vibratorTime);
 					face1.setVisibility(View.INVISIBLE);
 					face2.setVisibility(View.INVISIBLE);
 					face3.setVisibility(View.INVISIBLE);

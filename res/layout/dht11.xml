@@ -81,7 +81,7 @@
         android:layout_below="@id/face1"
         android:layout_marginTop="50dip"
         android:textSize="25sp"
-        android:text="아두이노를 연결하고 "/>
+        android:text="헬스기어를 연결하고 "/>
     
     <TextView 
         android:id="@+id/tvHumid"
